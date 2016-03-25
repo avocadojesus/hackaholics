@@ -10,14 +10,19 @@ var HomeController = React.createClass({
     }
   },
   componentDidMount: function() {
-    CommandStore.addChangeListener(function() {
-      alert('kkkkkk')
-    })
+    CommandStore.addChangeListener(this.__handleChangeEvent)
   },
   render: function() {
     return (
-      <View/>
+      <View
+        commands={this.state.commands}
+        />
     )
+  },
+  __handleChangeEvent: function() {
+    this.setState({
+      commands: CommandStore.get()
+    })
   }
 })
 
