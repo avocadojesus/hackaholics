@@ -44,6 +44,7 @@
     "react-markdown": "^2.1.1",
     "react-markdown-file": "0.0.4",
     "react-router": "^2.0.1",
+    "require-dir": "^0.3.0",
     "shell-parse": "0.0.2",
     "three": "^0.75.0"
   },
