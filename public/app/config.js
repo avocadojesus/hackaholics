@@ -1,14 +1,18 @@
 exports.commands = [
   {
-    name: 'Error',
+    name: 'clear',
+    description: 'Clears your console window',
+  },
+  {
+    name: 'error',
     description: 'A small program for listing errors',
   },
   {
-    name: 'Ls',
+    name: 'ls',
     description: 'Lists all available actions with descriptions'
   },
   {
-    name: 'Manifesto',
+    name: 'manifesto',
     description: 'Displays the glorious hackaholics manifesto'
   },
 ]
