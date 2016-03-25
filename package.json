@@ -44,7 +44,8 @@
     "react-markdown": "^2.1.1",
     "react-markdown-file": "0.0.4",
     "react-router": "^2.0.1",
-    "shell-parse": "0.0.2"
+    "shell-parse": "0.0.2",
+    "three": "^0.75.0"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
