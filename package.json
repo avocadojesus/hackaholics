@@ -34,6 +34,19 @@
     "express": "^4.13.4",
     "method-override": "^2.3.5",
     "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-router": "^2.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "lessify": "^1.0.1",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   }
 }
