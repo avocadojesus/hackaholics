@@ -29,15 +29,20 @@
   },
   "homepage": "https://github.com/avocadojesus/hackaholics#readme",
   "dependencies": {
+    "ascii-art": "0.0.2-alpha",
+    "asciimo": "^0.3.1",
     "body-parser": "^1.15.0",
     "ejs": "^2.4.1",
     "events": "^1.1.0",
     "express": "^4.13.4",
+    "figlet": "^1.1.1",
     "flux": "^2.1.1",
+    "jquery": "^2.2.2",
     "method-override": "^2.3.5",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-router": "^2.0.1"
+    "react-router": "^2.0.1",
+    "shell-parse": "0.0.2"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
