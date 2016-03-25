@@ -30,6 +30,7 @@
   "homepage": "https://github.com/avocadojesus/hackaholics#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
     "method-override": "^2.3.5",
     "react": "^0.14.7",
