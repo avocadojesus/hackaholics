@@ -1,4 +1,6 @@
 var React = require('react')
+var ReactDOM = require('react-dom')
+var $ = require('jquery')
 var CommandPrompt = require('../../components/command-prompt')
 var CommandPromptEntry = require('../../components/command-prompt-entry')
 var CommandDisplay = require('../../components/command-display')
@@ -14,6 +16,12 @@ var HomeView = React.createClass({
     return {
       commands: []
     }
+  },
+  componentDidUpdate: function() {
+    $(document).scrollTop($(document).height() + 1000);
+    setTimeout(function() {
+      $(document).scrollTop($(document).height() + 1000);
+    }, 200)
   },
   render: function() {
     return (
