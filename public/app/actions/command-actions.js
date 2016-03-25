@@ -7,3 +7,9 @@ exports.create = function(command) {
     data: command
   });
 }
+
+exports.deleteAll = function() {
+  AppDispatcher.handleAction({
+    actionType: appConstants.DELETE_ALL_COMMANDS
+  });
+}

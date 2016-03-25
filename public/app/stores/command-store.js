@@ -2,20 +2,21 @@ var AppDispatcher = require('../dispatchers/app-dispatcher');
 var appConstants = require('../constants/app-constants');
 var objectAssign = require('react/lib/Object.assign');
 var EventEmitter = require('events').EventEmitter;
-
 var CHANGE_EVENT = 'change';
-
-var _store = {
-  list: []
-};
-
+var _store;
 var addItem = function(item){
   _store.list.push(item);
 };
-
 var removeItem = function(index){
   _store.list.splice(index, 1);
 }
+var initStore = function() {
+  _store = {
+    list: []
+  };
+}
+
+initStore()
 
 var commandStore = objectAssign({}, EventEmitter.prototype, {
   addChangeListener: function(cb){
@@ -34,6 +35,11 @@ AppDispatcher.register(function(payload){
   switch(action.actionType){
     case appConstants.CREATE_COMMAND:
       addItem(action.data);
+      commandStore.emit(CHANGE_EVENT);
+      break;
+    case appConstants.DELETE_ALL_COMMANDS:
+      console.log('BARRELLSSSSS')
+      initStore()
       commandStore.emit(CHANGE_EVENT);
       break;
     default:
