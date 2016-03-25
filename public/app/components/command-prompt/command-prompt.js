@@ -24,7 +24,6 @@ var CommandPrompt = React.createClass({
           type='text'
           value={this.state.command_value}
           onKeyUp={function(e) {
-            console.log(e.which, e, e.ctrlKey)
             if (e.which === 13) self.__createCommand() // if enter
             if (e.which === 75 && e.ctrlKey) self.__deleteAllCommands()  // if ctrl + k
           }}
