@@ -23,9 +23,14 @@ var HomeView = React.createClass({
           <div className='command-display-container'>
             {this.props.commands.map(function(command, i){
               return (
-                <CommandPromptEntry>
-                  <CommandDisplay command={command} key={i} />
-                </CommandPromptEntry>
+                <div key={i}>
+                  <CommandPromptEntry>
+                    <CommandDisplay command={command} />
+                  </CommandPromptEntry>
+                  <CommandPromptEntry>
+                    <CommandDisplay parsed={true} command={command} />
+                  </CommandPromptEntry>
+                </div>
               )
             })}
           </div>
