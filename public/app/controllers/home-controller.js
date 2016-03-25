@@ -1,6 +1,7 @@
 var React = require('react')
 var View = require('../views/home-view')
 var CommandStore = require('../stores/command-store')
+var CommandActions = require('../actions/command-actions')
 
 var HomeController = React.createClass({
   displayName: 'HomeController',
@@ -11,6 +12,7 @@ var HomeController = React.createClass({
   },
   componentDidMount: function() {
     CommandStore.addChangeListener(this.__handleChangeEvent)
+    CommandActions.create('manifesto')
   },
   render: function() {
     return (
