@@ -4,6 +4,6 @@ var Ascii = require('../components/ascii')
 
 module.exports = function(args) {
   return [
-    <Ascii key={0}/>
+    <Ascii key={0} value='Manifesto' font='block'/>
   ]
 }
