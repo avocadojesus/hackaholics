@@ -1,0 +1,36 @@
+{
+  "name": "hackaholics",
+  "version": "0.0.0",
+  "description": "website representing the hackaholics organization",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avocadojesus/hackaholics.git"
+  },
+  "keywords": [
+    "hacking",
+    "orange",
+    "county",
+    "code",
+    "southern",
+    "california",
+    "socal",
+    "computer",
+    "engineering",
+    "meetup"
+  ],
+  "author": "avocadojesus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avocadojesus/hackaholics/issues"
+  },
+  "homepage": "https://github.com/avocadojesus/hackaholics#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "react": "^0.14.7",
+    "react-router": "^2.0.1"
+  }
+}
