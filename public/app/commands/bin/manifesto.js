@@ -8,7 +8,7 @@ exports.name = "manifesto"
 exports.description = "Displays the glorious hackaholics manifesto"
 exports.execute = function(args) {
   return [
-    <Ascii key={0} value='Manifesto' font='block'/>,
+    <Ascii key={0} value='Manifesto' font='ogre'/>,
     <LineBreak key={1} />,
     <Markdown file='/markdown/manifesto.md'/>
   ]
