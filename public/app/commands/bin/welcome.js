@@ -6,7 +6,7 @@ exports.name = "welcome"
 exports.description = "Displays a welcome message"
 exports.execute = function(args) {
   return [
-    <Ascii key={0} value='Welcome' font='cyberlarge'/>,
+    <Ascii key={0} value='Welcome' font='isometric2'/>,
     <Markdown file='/markdown/welcome.md'/>
   ]
 }
