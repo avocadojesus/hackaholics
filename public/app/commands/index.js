@@ -1,13 +1,9 @@
-var commands = {
-  clear: require('./bin/clear'),
-  error: require('./bin/error'),
-  ls: require('./bin/ls'),
-  manifesto: require('./bin/manifesto'),
-  members: require('./bin/members'),
-  when: require('./bin/when'),
-  where: require('./bin/where')
+var bulk = require('bulk-require')
+var commands = bulk(__dirname + '/bin/', './*.js')
+var command_list = []
+for (var i in commands) {
+  command_list.push(i)
 }
-var command_list = ['error', 'ls', 'manifesto']
 
 
 module.exports = commands

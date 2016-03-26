@@ -6,5 +6,5 @@ exports.parse = function(command) {
   var args = shellParse(command)[0].args.map(function(arg){return arg.value})
 
   if (!availableCommands[cmd]) return availableCommands.error.invalidCommand(cmd)
-  return availableCommands[cmd](args)
+  return availableCommands[cmd].execute(args)
 }

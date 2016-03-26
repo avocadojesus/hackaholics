@@ -1,9 +1,13 @@
 var React = require('react')
 var Error = require('./error')
 var Manifesto = require('./manifesto')
-var commands = require('../../config.js').commands
+var bulk = require('bulk-require')
+var _ = require('lodash')
+var commands = _.values(bulk(__dirname + '/', './*.js'))
 
-module.exports = function() {
+exports.name = "ls"
+exports.description = "Lists all available actions with descriptions"
+exports.execute = function() {
   return commands.map(function(command, i) {
     return <div key={i}><b>{command.name}</b>: {command.description}</div>
   })

@@ -3,7 +3,9 @@ var config = require('../../config.js')
 var bulk = require('bulk-require')
 var members = bulk(__dirname + '/../../members/', './*.js')
 
-module.exports = function() {
+exports.name = "members"
+exports.description = "Displays a list of members."
+exports.execute = function() {
   var arr = []
   for (var i in members) {
     var member = members[i]

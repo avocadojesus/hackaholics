@@ -1,5 +1,7 @@
 var CommandActions = require('../../actions/command-actions')
 
-module.exports = function() {
+exports.description = 'Clears your console window'
+exports.name = 'clear'
+exports.execute = function() {
   CommandActions.deleteAll()
 }

@@ -1,4 +1,6 @@
 var config = require('../../config.js')
-module.exports = function() {
+exports.name = "when"
+exports.description = "Discloses the times for the meetup"
+exports.execute = function() {
   return config.time
 }

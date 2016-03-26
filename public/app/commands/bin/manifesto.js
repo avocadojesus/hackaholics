@@ -4,7 +4,9 @@ var Ascii = require('../../components/ascii')
 var LineBreak = require('../../components/line-break')
 var Markdown = require('../../components/markdown')
 
-module.exports = function(args) {
+exports.name = "manifesto"
+exports.description = "Displays the glorious hackaholics manifesto"
+exports.execute = function(args) {
   return [
     <Ascii key={0} value='Manifesto' font='block'/>,
     <LineBreak key={1} />,
