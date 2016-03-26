@@ -49,7 +49,6 @@ var CommandPrompt = React.createClass({
   },
   __deleteAllCommands: function() {
     CommandActions.deleteAll()
-    this.setState({command_value: ''})
   },
   __usePreviousCommand: function() {
     var log_index = (this.state.log_index === null) ? (this.state.log.length - 1) : this.state.log_index - 1
