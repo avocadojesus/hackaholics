@@ -16,6 +16,10 @@ exports.commands = [
     description: 'Displays the glorious hackaholics manifesto'
   },
   {
+    name: 'members',
+    description: 'Displays a list of members.'
+  },
+  {
     name: 'when',
     description: 'Discloses the times for the meetup',
   },
@@ -25,5 +29,6 @@ exports.commands = [
   },
 ]
 
+exports.members = ['sudo', 'avojeez0']
 exports.address = "6882 Bridgewater Huntington Beach, CA 92647"
 exports.time = "Every Saturday Morning at 11:00 am"

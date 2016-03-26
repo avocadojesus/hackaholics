@@ -3,6 +3,7 @@ var commands = {
   error: require('./bin/error'),
   ls: require('./bin/ls'),
   manifesto: require('./bin/manifesto'),
+  members: require('./bin/members'),
   when: require('./bin/when'),
   where: require('./bin/where')
 }

@@ -8,6 +8,7 @@ var watchify = require('watchify');
 var reactify = require('reactify');
 var streamify = require('gulp-streamify');
 var lessify = require('lessify');
+var bulkify = require('bulkify');
 
 var path = {
   HTML: 'public/index.html',
@@ -22,7 +23,7 @@ var path = {
 gulp.task('watch', function() {
   var watcher  = watchify(browserify({
     entries: [path.ENTRY_POINT],
-    transform: [reactify, lessify],
+    transform: [reactify, lessify, bulkify],
     debug: true,
     cache: {}, packageCache: {}, fullPaths: true
   }));
