@@ -1,5 +1,6 @@
 // bin/gen-member.js
 // generates a new member using prompt
+
 var fs = require('fs')
 var prompt = require('prompt');
 prompt.start();
@@ -12,7 +13,7 @@ prompt.get(['member-name', 'short-description'], function (err, result) {
   var file = __dirname + '/../public/app/members/' + member_name + '/index.js'
   var contents = "exports.name = \"" + member_name + "\"\n"
   var contents = contents + "exports.description = \"" + description + "\"\n"
-  var contents = contents + "exports.bio = function() {\n}"
+  var contents = contents + "exports.bio = function() {\n\n}"
 
   fs.mkdir(dir, function(e){
     if (e) return console.error(e)
