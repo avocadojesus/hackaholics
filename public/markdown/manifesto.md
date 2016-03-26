@@ -1,11 +1,3 @@
 ## Hackaholics
 
-Hackaholics encourages growth through exploration. We believe that while curriculum can be helpful, it lacks the ability to inspire a creative exploration of its' medium. 
-
-
-What do you want the organization's legacy to be?
-What gives this organization it's purpose?
-What types of actions are aligned with the organization's values?
-How do you want to be represented in the world?
-What do you want to accomplish with this organization?
-What are you willing to do to achieve those accomplishments?
+Hackaholics encourages growth through exploration. While curriculum is excellent at providing structure for learning something completely, it will fail at engaging the creative part of your brain, which will create a disconnect between the skills you are acquiring and the reasons you originally had for acquiring them. At Hackaholics, we are attempting to bridge that gap by providing our members with an exploration-rich environment.
