@@ -1,5 +1,6 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
+var $ = require('jquery')
 var CommandActions = require('../../actions/command-actions')
 require('./command-prompt.less')
 

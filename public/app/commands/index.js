@@ -1,10 +1,3 @@
 var bulk = require('bulk-require')
-var commands = bulk(__dirname + '/bin/', './*.js')
-var command_list = []
-for (var i in commands) {
-  command_list.push(i)
-}
-
-
+var commands = bulk(__dirname + '/bin/', './*/index.js')
 module.exports = commands
-exports.list = command_list
