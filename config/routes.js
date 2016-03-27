@@ -3,7 +3,7 @@ var port = config.port || 3069
 var PagesController = require('../app/controllers/pages')
 
 exports.init = function(app) {
-  app.get('/', function(req, res) {
+  app.get('*', function(req, res) {
     return PagesController.home(req, res)
   });
 
