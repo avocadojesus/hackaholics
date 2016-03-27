@@ -25,24 +25,24 @@ node index.js
 ```
 
 ## Contributing
-Contributing to hackaholics is easy! the repo is public, although that does not mean anyone can merge code in. Anyone is free to clone the repo and modify their local copies, but you must make a pull request to us to actually get the code merged in. Here is an example of how to do so (assuming you have already followed the quick start guidelines)
-1. create an issue in our [github repo](https://github.com/avocadojesus/hackaholics/issues/new) (this makes it easy for us to track the intended activity on our application)
-2. in your command line, create a new branch, using [gitflow](http://nvie.com/posts/a-successful-git-branching-model/) to structure your branch name. assuming your issue number was `62` and your issue name was `make my bio`, you should do the following:
+Contributing to hackaholics is easy! the repo is public, although that does not mean anyone can merge code in. Anyone is free to clone the repo and modify their local copies, but you must make a pull request to us to actually get the code merged in. Here is an example of how to do so (assuming you have already followed the quick start guidelines)  
+1. create an issue in our [github repo](https://github.com/avocadojesus/hackaholics/issues/new) (this makes it easy for us to track the intended activity on our application)  
+2. in your command line, create a new branch, using   [gitflow](http://nvie.com/posts/a-successful-git-branching-model/) to structure your branch name. assuming your issue number was `62` and your issue name was `make my bio`, you should do the following:
 ```bash
 cd /path/to/hackaholics
 git checkout -b 'feature/#62-make-my-bio'
-```
-3. make changes to your local copy of the application
+```  
+3. make changes to your local copy of the application  
 4. publish those changes
 ```bash
 git push --set-upstream origin feature/#62-make-my-bio
-```
+```  
 ** NOTE: you can also just type `git push`. Git will automatically recognize that you have not published this branch yet, and will print out the command i listed above for you so you can just copy-paste.
-5. navigate to your branch in our [github repo](https://github.com/avocadojesus/hackaholics) and click the `create pull request` button.
-6. explain in the comment box what modifications you have made.
-7. notify one of the moderators on slack, or else wait for the code to get merged in.
+5. navigate to your branch in our [github repo](https://github.com/avocadojesus/hackaholics) and click the `create pull request` button.  
+6. explain in the comment box what modifications you have made.  
+7. notify one of the moderators on slack, or else wait for the code to get merged in.  
 
-This will launch your server on port `3069`. To view, open your web browser and point to `http://localhost:3069` to view the application.
+This will launch your server on port `3069`. To view, open your web browser and point to `http://localhost:3069` to view the application.  
 
 ## Infrastructure
 The Hackaholics site can be separated into two fundamental sections. One is for the backend service (run by an node/express stack), and the other is for a front-end stack (built in react/react-router/flux design pattern)
