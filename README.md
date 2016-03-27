@@ -44,6 +44,44 @@ git push --set-upstream origin feature/#62-make-my-bio
 
 This will launch your server on port `3069`. To view, open your web browser and point to `http://localhost:3069` to view the application.  
 
+## Generating a new member
+Members are listed by running the `members` command. To view the inner-workings of this, you can view the file located at `/public/app/commands/bin/members.js`
+
+```bash
+$ cd /path/to/hackaholics
+$ npm run gen-member
+```
+
+```js
+// public/app/members/me.js
+var React = require('react')
+exports.name = "me"
+exports.description = "my description"
+exports.bio = function() {
+  return <div>im shy damnit</div>
+}
+```
+
+this will launch a prompt, which eventually populates some boiler-plate code into public/app/members/your-member-name/index.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new member. To view this member's bio, you could then run `members -u me`. Also, note that you do not have to return any [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html) here. You can simply return a string if you like. Whatever you return here will be printed in the prompt.
+
+## Generating a new command
+Commands are the things which are executed when someone interacts with the prompt built into the Hackaholics webapp. commands include `ls`, `manifesto`, `members`, `members -u username`
+```bash
+$ cd /path/to/hackaholics
+$ npm run gen-command
+```
+
+```js
+// public/app/commands/bin/my-command.js
+exports.name = "my-command"
+exports.description = "tells you what i think"
+exports.execute = function() {
+  return "i told you already, i'm shy, damnit"
+}
+```
+
+this will launch a prompt, which eventually populates some boiler-plate code into public/app/commands/bin/your-command-name.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new command.
+
 ## Infrastructure
 The Hackaholics site can be separated into two fundamental sections. One is for the backend service (run by an node/express stack), and the other is for a front-end stack (built in react/react-router/flux design pattern)
 
@@ -447,42 +485,5 @@ exports.create = function(username, password, success, fail) {
 
 This completes the data-flow cycle for a FLUX application. The `controller` collects initial data from a `store`, then renders a `view`, distributing the data down. The view then renders a `component` for creating a user. The component renders a form, which, when submitted, calls an `action`. That action then makes an external request to create a new user, receives the response, and then bubbles that response back to our `dispatcher`. Our `store` was set up initially to listen for the AppDispatcher's calls, and responds by creating the new user in local memory. It then any listeners which are subscribed to its updates, which in this case is our `controller`. The controller then distributes the new data to the view.
 
-## Generating a new member
-Members are listed by running the `members` command. To view the inner-workings of this, you can view the file located at `/public/app/commands/bin/members.js`
-
-```bash
-$ cd /path/to/hackaholics
-$ npm run gen-member
-```
-
-```js
-// public/app/members/me.js
-var React = require('react')
-exports.name = "me"
-exports.description = "my description"
-exports.bio = function() {
-  return <div>im shy damnit</div>
-}
-```
-
-this will launch a prompt, which eventually populates some boiler-plate code into public/app/members/your-member-name/index.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new member. To view this member's bio, you could then run `members -u me`. Also, note that you do not have to return any [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html) here. You can simply return a string if you like. Whatever you return here will be printed in the prompt.
-
-## Generating a new command
-Commands are the things which are executed when someone interacts with the prompt built into the Hackaholics webapp. commands include `ls`, `manifesto`, `members`, `members -u username`
-```bash
-$ cd /path/to/hackaholics
-$ npm run gen-command
-```
-
-```js
-// public/app/commands/bin/my-command.js
-exports.name = "my-command"
-exports.description = "tells you what i think"
-exports.execute = function() {
-  return "i told you already, i'm shy, damnit"
-}
-```
-
-this will launch a prompt, which eventually populates some boiler-plate code into public/app/commands/bin/your-command-name.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new command.
-
 ## Style Guide
+While we are relatively loose with our style guide, the one thing we do ask (so that the code does not get chewed up by anybodies operating system) is that everyone maintain `soft tabs` with an indentation of `2 spaces`
