@@ -13,19 +13,24 @@ var listUsers = function() {
   }
   return arr
 }
-
 var listUser = function(username) {
   if (!members[username]) return "Username not found: " + username + "... try running `members` first to see a list of members"
   if (!typeof members[username].bio === 'function') return "Invalid configuration for member bio. Please try again later"
   return members[username].bio()
 }
-
 var execute = function(args) {
+  if (expectOption('-h', args) || expectOption('--help', args)) return help()
   var username = expectOptionWithArgument('-u', args)
   if (username) return listUser(username)
   return listUsers()
 }
+var help = function() {
+  return [
+    <Ascii key={0} value={this.name} font='bell'/>,
+    <Markdown file={'/app/commands/bin/' + this.name + '/help.md'}/>
+  ]
+}
 
 exports.name = "members"
-exports.description = "Displays a list of members."
+exports.description = "Displays a list of members"
 exports.execute = execute
