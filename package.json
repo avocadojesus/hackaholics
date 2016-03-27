@@ -55,6 +55,7 @@
     "require-dir": "^0.3.0",
     "shell-parse": "0.0.2",
     "three": "^0.75.0",
+    "three-world": "^2.2.0",
     "typed.js": "git://github.com/mattboldt/typed.js.git"
   },
   "devDependencies": {

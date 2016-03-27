@@ -12,7 +12,7 @@ var HomeController = React.createClass({
   },
   componentDidMount: function() {
     CommandStore.addChangeListener(this.__handleChangeEvent)
-    CommandActions.create('welcome')
+    CommandActions.create('asteroids')
   },
   render: function() {
     return (
