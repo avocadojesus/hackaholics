@@ -1,5 +1,5 @@
 var bulk = require('bulk-require')
-var commands = bulk(__dirname + '/bin/', './*.js')
+var commands = bulk(__dirname + '/bin/', './*/index.js')
 var command_list = []
 for (var i in commands) {
   command_list.push(i)

@@ -2,8 +2,8 @@ var React = require('react')
 var config = require('../../../config.js')
 var bulk = require('bulk-require')
 var members = bulk(__dirname + '/../../../members/', './*/index.js')
-var expectOption = require('../../../lib/command-parser').expectOption
-var expectOptionWithArgument = require('../../../lib/command-parser').expectOptionWithArgument
+var expectOption = require('../../../lib/command-helper').expectOption
+var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 
 var listUsers = function() {
   var arr = []
