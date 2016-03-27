@@ -6,8 +6,6 @@ var expectOption = require('../../../lib/command-helper').expectOption
 var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 var CommandActions = require('../../../actions/command-actions')
 
-
-
 exports.description = 'Clears your console window'
 exports.name = 'clear'
 exports.execute = function(args) {
@@ -16,7 +14,7 @@ exports.execute = function(args) {
 }
 exports.help = function() {
   return [
-    <Ascii key={0} value='clear' font='bell'/>,
+    <Ascii key={0} value={this.name} font='bell'/>,
     <Markdown file={'/app/commands/bin/' + this.name + '/help.md'}/>
   ]
 }
