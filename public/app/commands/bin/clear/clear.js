@@ -2,9 +2,10 @@ var React = require('react')
 var $ = window.jQuery = window.$ = require('jquery')
 var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
-var CommandActions = require('../../../actions/command-actions')
 var expectOption = require('../../../lib/command-helper').expectOption
 var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
+var CommandActions = require('../../../actions/command-actions')
+
 
 
 exports.description = 'Clears your console window'
