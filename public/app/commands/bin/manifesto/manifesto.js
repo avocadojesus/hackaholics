@@ -4,6 +4,7 @@ var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
 var expectOption = require('../../../lib/command-helper').expectOption
 var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
+var LineBreak = require('../../../components/line-break')
 
 exports.name = "manifesto"
 exports.description = "Displays the glorious hackaholics manifesto"
