@@ -2,8 +2,12 @@
 
 Welcome to Hackaholics! We are an organization providing support for computer engineers at all competency levels and specializations. This website both serves as a tool for communicating and broadcasting information about our meetup, as well as for serving as a sandbox for the engineers coming into our app. For this reason, the app is built to scale as both a backend node api, as well as a scalable front end for writing applications at various levels of complexity.
 
+
 ## Quick Start
-in the command line of your choise, do the following
+`note:` This tutorial assumes that you have the following technologies installed (with links to the quick start for each one)
+* [node](https://nodejs.org/en/download/)
+
+in the command line of your choice, do the following
 ```bash
 cd /path/to/where/you/want/this/project # changes into a new folder
 git clone https://github.com/avocadojesus/hackaholics.git # clones our code repository
@@ -19,6 +23,24 @@ At this point, gulp will be running on a continuous process, so you will need to
 cd /path/to/hackaholics
 node index.js
 ```
+
+## Contributing
+Contributing to hackaholics is easy! the repo is public, although that does not mean anyone can merge code in. Anyone is free to clone the repo and modify their local copies, but you must make a pull request to us to actually get the code merged in. Here is an example of how to do so (assuming you have already followed the quick start guidelines)
+1. create an issue in our [github repo](https://github.com/avocadojesus/hackaholics/issues/new) (this makes it easy for us to track the intended activity on our application)
+2. in your command line, create a new branch, using [gitflow](http://nvie.com/posts/a-successful-git-branching-model/) to structure your branch name. assuming your issue number was `62` and your issue name was `make my bio`, you should do the following:
+```bash
+cd /path/to/hackaholics
+git checkout -b 'feature/#62-make-my-bio'
+```
+3. make changes to your local copy of the application
+4. publish those changes
+```bash
+git push --set-upstream origin feature/#62-make-my-bio
+```
+** NOTE: you can also just type `git push`. Git will automatically recognize that you have not published this branch yet, and will print out the command i listed above for you so you can just copy-paste.
+5. navigate to your branch in our [github repo](https://github.com/avocadojesus/hackaholics) and click the `create pull request` button.
+6. explain in the comment box what modifications you have made.
+7. notify one of the moderators on slack, or else wait for the code to get merged in.
 
 This will launch your server on port `3069`. To view, open your web browser and point to `http://localhost:3069` to view the application.
 
@@ -62,18 +84,18 @@ Controllers come second in our stack (after the routing layer). In a typical MVC
 * serializing that model data (converting it to a format appropriate for your front end to use. This should be done through a separate service)
 * returning that data to a view (delegated to the view layer)
 
-While this is certainly true of our application, it is also worth noting that our application does not currently require any backend data to operate on, so our controller simply skips to the very last step (calling a view). However, if our application does grow to elevating levels of complexity, we may turn out needing an authentication system, a model layer, a database, a policy layer, and a serialization layer. Note that while the controller is **responsible** for these actions, it should also **delegate** the actual tasks to separate layers, so as to maintain a [DRY](need link to wiki) coding practice.
+While this is certainly true of our application, it is also worth noting that our application does not currently require any backend data to operate on, so our controller simply skips to the very last step (calling a view). However, if our application does grow to elevating levels of complexity, we may turn out needing an authentication system, a model layer, a database, a policy layer, and a serialization layer. Note that while the controller is **responsible** for these actions, it should also **delegate** the actual tasks to separate layers, so as to maintain a [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) coding practice.
 
 #### Views
-Views are responsible for governing the front-end interactions. This is the primary area of discussion for our current application, as it is a front-end application, but the discussion for that can be found in our [front end documentation](need link). In this application, our view is simply loading a bundled version of our front-end application, which is entirely composed of javascript, which then renders all of the contents of our application.
+Views are responsible for governing the front-end interactions. This is the primary area of discussion for our current application, as it is a front-end application, but the discussion for that can be found in our front end documentation. In this application, our view is simply loading a bundled version of our front-end application, which is entirely composed of javascript, which then renders all of the contents of our application.
 
 The view, in this case, would be responsible for taking any backend data (sent by the controller), and ensuring that that data is funneled into our application. Again, since our app does not have any backend data to process, this is currently unnecessary.
 
 ### Front End
 While our application contains many different technologies, it is built primarily on the following:
-* [ReactRouter](need link)
-* [Reactjs](need link)
-* [Flux](need link)
+* [ReactRouter](https://github.com/reactjs/react-router)
+* [Reactjs](https://facebook.github.io/react/)
+* [Flux](https://facebook.github.io/flux/)
 
 In addition to being familiar with those technologies, there is also a design practice associated with `flux`, as it is not just a package, but also a design principle which can be implemented a variety of ways.
 
@@ -94,7 +116,7 @@ I know flux is hard. It can be a challenge for those who are new, but stay stron
 * [for teh n00bz (nothing wrong with that!)](http://blog.andrewray.me/flux-for-stupid-people/)
 
 ## Building a new view from scratch
-Here, we will cover only the process of writing code. For an understanding of how to contribute, please see our [contributing](need link) guide. This will help you to better understand what protocols take place before you begin writing your code.
+Here, we will cover only the process of writing code. For an understanding of how to contribute, please see our contributing guide. This will help you to better understand what protocols take place before you begin writing your code.
 
 ### 1. Route
 Create a new route, and direct it to a controller
@@ -394,7 +416,7 @@ module.exports = MyComponent
 ```
 
 ### 7. Acion
-Actions are meant to inform a dispatcher of an information update, often after performing an operation on that data via a [REST API](need link). Please note that the example below assumes you have a REST API in place that accepts an endpoint for a `POST` to `/users`, which returns a JSON output with a user object.
+Actions are meant to inform a dispatcher of an information update, often after performing an operation on that data via a [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer). Please note that the example below assumes you have a REST API in place that accepts an endpoint for a `POST` to `/users`, which returns a JSON output with a user object.
 
 ```js
 // public/app/actions/user-actions
@@ -443,9 +465,10 @@ exports.bio = function() {
 }
 ```
 
-this will launch a prompt, which eventually populates some boiler-plate code into public/app/members/your-member-name/index.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new member. To view this member's bio, you could then run `members -u me`. Also, note that you do not have to return any [jsx](need link) here. You can simply return a string if you like. Whatever you return here will be printed in the prompt.
+this will launch a prompt, which eventually populates some boiler-plate code into public/app/members/your-member-name/index.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new member. To view this member's bio, you could then run `members -u me`. Also, note that you do not have to return any [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html) here. You can simply return a string if you like. Whatever you return here will be printed in the prompt.
 
 ## Generating a new command
+Commands are the things which are executed when someone interacts with the prompt built into the Hackaholics webapp. commands include `ls`, `manifesto`, `members`, `members -u username`
 ```bash
 $ cd /path/to/hackaholics
 $ npm run gen-command
@@ -461,3 +484,5 @@ exports.execute = function() {
 ```
 
 this will launch a prompt, which eventually populates some boiler-plate code into public/app/commands/bin/your-command-name.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new command.
+
+## Style Guide
