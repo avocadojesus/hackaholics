@@ -1,9 +1,9 @@
 var React = require('react')
 var $ = window.jQuery = window.$ = require('jquery')
-var Ascii = require('../../components/ascii')
-var CommandActions = require('../../actions/command-actions')
-var expectOption = require('../../lib/command-parser').expectOption
-var expectOptionWithArgument = require('../../lib/command-parser').expectOptionWithArgument
+var Ascii = require('../../../components/ascii')
+var CommandActions = require('../../../actions/command-actions')
+var expectOption = require('../../../lib/command-parser').expectOption
+var expectOptionWithArgument = require('../../../lib/command-parser').expectOptionWithArgument
 
 exports.description = 'Clears your console window'
 exports.name = 'clear'

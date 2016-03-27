@@ -1,7 +1,7 @@
 var React = require('react')
-var Ascii = require('../../components/ascii')
-var LineBreak = require('../../components/line-break')
-var Markdown = require('../../components/markdown')
+var Ascii = require('../../../components/ascii')
+var LineBreak = require('../../../components/line-break')
+var Markdown = require('../../../components/markdown')
 
 exports.name = "welcome"
 exports.description = "Displays a welcome message"
