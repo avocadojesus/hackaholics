@@ -1,9 +1,12 @@
 var React = require('react')
+var $ = window.jQuery = window.$ = require('jquery')
+var Ascii = require('../../../components/ascii')
+var Markdown = require('../../../components/markdown')
+var expectOption = require('../../../lib/command-helper').expectOption
+var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 var config = require('../../../config.js')
 var bulk = require('bulk-require')
 var members = bulk(__dirname + '/../../../members/', './*/index.js')
-var expectOption = require('../../../lib/command-helper').expectOption
-var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 
 var listUsers = function() {
   var arr = []
@@ -26,8 +29,8 @@ var execute = function(args) {
 }
 var help = function() {
   return [
-    <Ascii key={0} value={this.name} font='bell'/>,
-    <Markdown file={'/app/commands/bin/' + this.name + '/help.md'}/>
+    <Ascii key={0} value='members' font='bell'/>,
+    <Markdown file={'/app/commands/bin/members/help.md'}/>
   ]
 }
 

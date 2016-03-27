@@ -1,6 +1,10 @@
 var React = require('react')
+var $ = window.jQuery = window.$ = require('jquery')
+var Ascii = require('../../../components/ascii')
+var Markdown = require('../../../components/markdown')
+var expectOption = require('../../../lib/command-helper').expectOption
+var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 var YouTube = require('react-youtube').default
-var $ = require('jquery')
 
   // // Video from Youtube
   // React.render(

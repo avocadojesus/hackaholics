@@ -1,3 +1,9 @@
+var React = require('react')
+var $ = window.jQuery = window.$ = require('jquery')
+var Ascii = require('../../../components/ascii')
+var Markdown = require('../../../components/markdown')
+var expectOption = require('../../../lib/command-helper').expectOption
+var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 var config = require('../../../config.js')
 
 exports.name = "where"
