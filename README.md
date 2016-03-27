@@ -47,11 +47,15 @@ This will launch your server on port `3069`. To view, open your web browser and 
 ## Generating a new member
 Members are listed by running the `members` command. To view the inner-workings of this, you can view the file located at `/public/app/commands/bin/members.js`
 
+to generate a member:
 ```bash
 $ cd /path/to/hackaholics
 $ npm run gen-member
 ```
 
+this will launch a prompt, which eventually populates some boiler-plate code into public/app/members/your-member-name/index.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new member. To view this member's bio, you could then run `members -u me`. Also, note that you do not have to return any [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html) here. You can simply return a string if you like. Whatever you return here will be printed in the prompt.
+
+generated code:
 ```js
 // public/app/members/me.js
 var React = require('react')
@@ -62,15 +66,18 @@ exports.bio = function() {
 }
 ```
 
-this will launch a prompt, which eventually populates some boiler-plate code into public/app/members/your-member-name/index.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new member. To view this member's bio, you could then run `members -u me`. Also, note that you do not have to return any [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html) here. You can simply return a string if you like. Whatever you return here will be printed in the prompt.
-
 ## Generating a new command
 Commands are the things which are executed when someone interacts with the prompt built into the Hackaholics webapp. commands include `ls`, `manifesto`, `members`, `members -u username`
+
+to create a new command
 ```bash
 $ cd /path/to/hackaholics
 $ npm run gen-command
 ```
 
+this will launch a prompt, which eventually populates some boiler-plate code into public/app/commands/bin/your-command-name.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new command.
+
+generated code:
 ```js
 // public/app/commands/bin/my-command.js
 exports.name = "my-command"
@@ -79,8 +86,6 @@ exports.execute = function() {
   return "i told you already, i'm shy, damnit"
 }
 ```
-
-this will launch a prompt, which eventually populates some boiler-plate code into public/app/commands/bin/your-command-name.js. Once this is done, you will need to re-run `gulp` to load in the new files. You will not have to do this on update, only on creation of a new command.
 
 ## Infrastructure
 The Hackaholics site can be separated into two fundamental sections. One is for the backend service (run by an node/express stack), and the other is for a front-end stack (built in react/react-router/flux design pattern)
