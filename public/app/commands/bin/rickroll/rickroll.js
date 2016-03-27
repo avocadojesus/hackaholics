@@ -16,7 +16,8 @@ var $ = require('jquery')
 
 exports.name = "rickroll"
 exports.description = "i think you know what this will do"
-exports.execute = function() {
+exports.execute = function(args) {
+  if (expectOption('-h', args) || expectOption('--help', args)) return this.help()
   var opts = {
     width: $(window).width(),
     height: $(window).height(),
@@ -25,4 +26,10 @@ exports.execute = function() {
     }
   };
   return <YouTube videoId="oHg5SJYRHA0" opts={opts} />
+}
+exports.help = function() {
+  return [
+    <Ascii key={0} value={this.name} font='bell'/>,
+    <Markdown file={'/app/commands/bin/' + this.name + '/help.md'}/>
+  ]
 }
