@@ -38,8 +38,11 @@ AppDispatcher.register(function(payload){
       commandStore.emit(CHANGE_EVENT);
       break;
     case appConstants.DELETE_ALL_COMMANDS:
-      console.log('BARRELLSSSSS')
       initStore()
+      commandStore.emit(CHANGE_EVENT);
+      break;
+    case appConstants.DELETE_LAST_COMMAND:
+      _store.list.pop()
       commandStore.emit(CHANGE_EVENT);
       break;
     default:
