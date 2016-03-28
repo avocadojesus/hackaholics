@@ -13,3 +13,9 @@ exports.deleteAll = function() {
     actionType: appConstants.DELETE_ALL_COMMANDS
   });
 }
+
+exports.deleteLast = function() {
+  AppDispatcher.handleAction({
+    actionType: appConstants.DELETE_LAST_COMMAND
+  });
+}
