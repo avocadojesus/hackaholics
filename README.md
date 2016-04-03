@@ -2,11 +2,10 @@
 
 Welcome to Hackaholics! We are an organization providing support for computer engineers at all competency levels and specializations. This website both serves as a tool for communicating and broadcasting information about our meetup, as well as for serving as a sandbox for the engineers coming into our app. For this reason, the app is built to scale as both a backend node api, as well as a scalable front end for writing applications at various levels of complexity.
 
+## installation requirements
+  * [node](https://nodejs.org/en/download/)
 
 ## Quick Start
-`note:` This tutorial assumes that you have the following technologies installed (with links to the quick start for each one)
-* [node](https://nodejs.org/en/download/)
-
 in the command line of your choice, do the following
 ```bash
 cd /path/to/where/you/want/this/project # changes into a new folder
@@ -84,14 +83,16 @@ var React = require('react')
 var $ = window.jQuery = window.$ = require('jquery')
 var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
-var expectOption = require('../../../lib/command-helper').expectOption
-var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
+var Command = require('../../../lib/command')
 
-exports.name = "my-command"
-exports.description = "tells you what i think"
+exports.description = "{{description}}"
+exports.name = "{{name}}"
 exports.execute = function(args) {
-  if (expectOption('-h', args) || expectOption('--help', args)) return this.help()
-  return "i told you already, i'm shy, damnit"
+  var cmd = new Command(args)
+  cmd.expectOption('-h', 'help')
+  cmd.expectOption('--h', 'help')
+  if (cmd.findOptionByLabel('help')) return this.help()
+  return "make me do something, plz"
 }
 exports.help = function() {
   return [
@@ -472,7 +473,7 @@ var MyComponent = React.createClass({
 module.exports = MyComponent
 ```
 
-### 7. Acion
+### 7. Action
 Actions are meant to inform a dispatcher of an information update, often after performing an operation on that data via a [REST API](https://en.wikipedia.org/wiki/Representational_state_transfer). Please note that the example below assumes you have a REST API in place that accepts an endpoint for a `POST` to `/users`, which returns a JSON output with a user object.
 
 ```js
