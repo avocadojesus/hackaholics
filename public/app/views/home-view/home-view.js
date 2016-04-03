@@ -33,9 +33,12 @@ var HomeView = React.createClass({
               if (i > 0) {
                 return (
                   <div key={i}>
-                    <CommandPromptEntry>
-                      <CommandDisplay command={command} />
-                    </CommandPromptEntry>
+                    {
+                      !command.opts.hide_unparsed &&
+                      <CommandPromptEntry>
+                        <CommandDisplay command={command} />
+                      </CommandPromptEntry>
+                    }
                     <CommandPromptEntry>
                       <CommandDisplay parsed={true} command={command} />
                     </CommandPromptEntry>
