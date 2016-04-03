@@ -15,10 +15,9 @@ exports.init = function(app) {
 
 exports.initSocket = function(io, http) {
   io.on('connection', function(socket) {
-    io.emit('/chat_message', 'hello birld')
-
-    socket.on('/chat_message', function(message) {
-      io.emit('/chat_message', message)
+    socket.on('/client/chat_message', function(message) {
+      console.log(message)
+      io.emit('/server/chat_message', message)
     })
   })
 

@@ -13,10 +13,15 @@ var CommandDisplay = React.createClass({
       parsed: false
     }
   },
+  getInitialState: function() {
+    return {
+      parsed_command: this.props.parsed ? CommandParser.parse(this.props.command) : null
+    }
+  },
   render: function() {
     return (
       <div className='command-display'>
-        {this.props.parsed && CommandParser.parse(this.props.command)}
+        {this.props.parsed && this.state.parsed_command}
         {!this.props.parsed && this.props.command}
       </div>
     )
