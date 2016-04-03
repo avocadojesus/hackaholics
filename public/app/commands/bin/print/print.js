@@ -2,14 +2,16 @@ var React = require('react')
 var $ = window.jQuery = window.$ = require('jquery')
 var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
-var expectOption = require('../../../lib/command-helper').expectOption
-var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
+var Command = require('../../../lib/command')
 
 exports.description = "prints out whatever you send to it"
 exports.name = "print"
 exports.execute = function(args) {
-  if (expectOption('-h', args) || expectOption('--help', args)) return this.help()
-  return <span style={{color: 'blue'}}>{args[0]}</span>
+  var cmd = new Command(args)
+  cmd.expectOption('-h', 'help')
+  cmd.expectOption('--h', 'help')
+  if (cmd.findOptionByLabel('help')) return this.help()
+  return <span style={{color: 'blue'}}>{cmd.input.join(' ')}</span>
 }
 exports.help = function() {
   return [
