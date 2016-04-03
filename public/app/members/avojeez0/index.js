@@ -1,8 +1,8 @@
 var React = require('react')
 var Bio = require('./avojeez0-bio')
 
-exports.name = "avojeez0"
-exports.description = "Astrid, won't you please put flowrz on grave thx"
+exports.name = <span style={{color: 'red'}}>avojeez0</span>
+exports.description = "tries hard and often has teh failz"
 exports.bio = function() {
   return <Bio />
 }

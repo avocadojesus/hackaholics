@@ -1,3 +1,4 @@
 node_modules
 public/dist
 tmp
+npm-debug.log

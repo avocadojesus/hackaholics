@@ -12,6 +12,9 @@ exports.handleWebhook = function(req, res) {
     //console.log('executing ' + __dirname + '/../scripts/git-pull.sh')
     shell.exec('git pull origin development', function(code, output) {
       console.log(code, output)
+      shell.exec('gulp', function(code, output) {
+        console.log(code, output)
+      })
     })
   //}
 }
