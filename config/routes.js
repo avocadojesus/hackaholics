@@ -1,6 +1,5 @@
 var config = require('./application')
 var port = config.port || 3069
-var socket_port = config.socket_port || 3070
 var PagesController = require('../app/controllers/pages')
 var GithubController = require('../app/controllers/github')
 
@@ -16,7 +15,6 @@ exports.init = function(app) {
 exports.initSocket = function(io, http) {
   io.on('connection', function(socket) {
     socket.on('/client/chat_message', function(message) {
-      console.log(message)
       io.emit('/server/chat_message', message)
     })
   })
