@@ -1,10 +1,10 @@
 var AppDispatcher = require('../dispatchers/app-dispatcher')
 var appConstants = require('../constants/app-constants')
 
-exports.create = function(command) {
+exports.create = function(command, opts) {
   AppDispatcher.handleAction({
     actionType: appConstants.CREATE_COMMAND,
-    data: command
+    data: {text: command, opts: opts || {}}
   });
 }
 

@@ -7,10 +7,18 @@ exports.init = function(app) {
   app.post('/github', function(req, res) {
     GithubController.handleWebhook(req, res)
   })
-  app.get('*', function(req, res) {
+  app.get('/', function(req, res) {
     return PagesController.home(req, res)
   });
+}
 
-  app.listen(port);
+exports.initSocket = function(io, http) {
+  io.on('connection', function(socket) {
+    socket.on('/client/chat_message', function(message) {
+      io.emit('/server/chat_message', message)
+    })
+  })
+
+  http.listen(port)
   console.log('Hackaholics is waiting on ' + port)
 }

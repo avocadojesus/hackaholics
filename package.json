@@ -43,6 +43,7 @@
     "flux": "^2.1.1",
     "gulp-install": "^0.6.0",
     "jquery": "^2.2.2",
+    "local-storage": "^1.4.2",
     "lodash": "^4.6.1",
     "method-override": "^2.3.5",
     "react": "^0.14.7",
@@ -55,13 +56,11 @@
     "require-all": "^2.0.0",
     "require-dir": "^0.3.0",
     "shell-parse": "0.0.2",
+    "shelljs": "~0.6.0",
+    "socket.io": "^1.4.5",
     "three": "^0.75.0",
     "three-world": "^2.2.0",
-    "typed.js": "git://github.com/mattboldt/typed.js.git",
-    "github-webhook-handler": "~0.5.0",
-    "nodegit": "~0.12.1",
-    "github": "~0.2.4",
-    "shelljs": "~0.6.0"
+    "typed.js": "git://github.com/mattboldt/typed.js.git"
   },
   "devDependencies": {
     "browserify": "^13.0.0",

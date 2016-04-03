@@ -18,6 +18,7 @@ prompt.get(['command-name', 'short-description'], function (err, result) {
   var index_contents = 'module.exports = require("./' + command_name + '")'
   var help_contents = '* ' + command_name + ': ' + description + '\n'
   help_contents = help_contents + '* ' + command_name + ' -h: show help menu'
+  help_contents = help_contents + '* ' + command_name + ' --help: show help menu'
 
   fs.mkdir(dir, function(e) {
     if (e) return console.error(e)
