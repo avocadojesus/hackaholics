@@ -9,6 +9,9 @@ exports.description = "opens up communication channel with all other users"
 exports.name = "chat"
 exports.execute = function(args) {
   if (expectOption('-h', args) || expectOption('--help', args)) return this.help()
+  if (!window.io) return <span style={{color: 'red'}}>failed to establish chat client connection. please try again later</span>
+  console.log('emitting event')
+  window.io.emit('/chat_message', 'hamburger')
 }
 exports.help = function() {
   return [

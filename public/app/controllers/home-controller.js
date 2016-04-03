@@ -13,6 +13,9 @@ var HomeController = React.createClass({
   componentDidMount: function() {
     CommandStore.addChangeListener(this.__handleChangeEvent)
     CommandActions.create('welcome')
+    window.io.on('/chat_message', function(message) {
+      
+    })
   },
   render: function() {
     return (
