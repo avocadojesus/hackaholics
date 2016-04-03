@@ -3,31 +3,15 @@ var $ = window.jQuery = window.$ = require('jquery')
 var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
 var Command = require('../../../lib/command')
-var ls = require('local-storage')
 
-var __getUser = function() {
-  if (ls.get('username')) return ls.get('username')
-  return 'annonymous'
-}
-
-var __setUser = function(username) {
-  ls.set('username', username)
-}
-
-exports.description = "opens up communication channel with all other users"
-exports.name = "chat"
+exports.description = "wont u come"
+exports.name = "blackholesun"
 exports.execute = function(args) {
   var cmd = new Command(args)
   cmd.expectOption('-h', 'help')
   cmd.expectOption('--h', 'help')
-  cmd.expectOptionWithArgs('-u', 'user')
-  cmd.expectOptionWithArgs('--user', 'user')
   if (cmd.findOptionByLabel('help')) return this.help()
-  if (cmd.findOptionByLabel('user')) {
-    __setUser(cmd.findOptionByLabel('user').args[0])
-  }
-
-  window.io.emit('/client/chat_message', '{{' + __getUser() + '}}: ' + cmd.input.join(' '))
+  return "make me do something, plz"
 }
 exports.help = function() {
   return [

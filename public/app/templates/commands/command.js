@@ -2,13 +2,16 @@ var React = require('react')
 var $ = window.jQuery = window.$ = require('jquery')
 var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
-var expectOption = require('../../../lib/command-helper').expectOption
-var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
+var Command = require('../../../lib/command')
 
 exports.description = "{{description}}"
 exports.name = "{{name}}"
 exports.execute = function(args) {
-  if (expectOption('-h', args) || expectOption('--help', args)) return this.help()
+  var cmd = new Command(args)
+  cmd.expectOption('-h', 'help')
+  cmd.expectOption('--h', 'help')
+  if (cmd.findOptionByLabel('help')) return this.help()
+  return "make me do something, plz"
 }
 exports.help = function() {
   return [
