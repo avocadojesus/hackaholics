@@ -11,7 +11,7 @@ var Bio = React.createClass({
 
     $(ReactDOM.findDOMNode(this.refs.header)).typed({
       strings: [
-        "Avogadr0 would find me better off"
+        "Avogadr0 would find me better off if he only knew"
       ],
       typeSpeed: 200,
       showCursor: false,
