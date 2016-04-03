@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-TMP_DIR="${pwd}/tmp"
+PWD=`pwd`
+TMP_DIR="$PWD/tmp"
 ZIP_NAME="development.zip"
 REPO="https://github.com/avocadojesus/hackaholics"
 BRANCH="development"
-REPO_ZIP = "${REPO}/zipball/${BRANCH}"
+REPO_ZIP="$REPO/zipball/$BRANCH"
 mkdir "$TMP_DIR"
 echo "$TMP_DIR"
 echo "$ZIP_NAME"
