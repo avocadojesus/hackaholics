@@ -5,8 +5,11 @@ ZIP_NAME="development.zip"
 REPO="https://github.com/avocadojesus/hackaholics"
 BRANCH="development"
 REPO_ZIP = "${REPO}/zipball/${BRANCH}"
-mkdir $TMP_DIR
-cd $TMP_DIR && wget -O $ZIP_NAME -q $REPO_ZIP
+mkdir "$TMP_DIR"
+echo "$TMP_DIR"
+echo "$ZIP_NAME"
+echo "$REPO_ZIP"
+cd "$TMP_DIR" && wget -O "$ZIP_NAME" -q "$REPO_ZIP"
 
 # Second, unzip it, if the zip file exists
 #if [ -f /path/to/put/zip/file/projectmaster.zip ]; then
