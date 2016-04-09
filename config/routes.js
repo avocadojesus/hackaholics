@@ -17,6 +17,10 @@ exports.initSocket = function(io, http) {
     socket.on('/client/chat_message', function(message) {
       io.emit('/server/chat_message', message)
     })
+
+    socket.on('/client/broadcast_command', function(command) {
+      io.emit('/server/broadcast_command', command)
+    })
   })
 
   http.listen(port)

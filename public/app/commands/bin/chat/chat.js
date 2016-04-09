@@ -3,6 +3,7 @@ var $ = window.jQuery = window.$ = require('jquery')
 var Ascii = require('../../../components/ascii')
 var Markdown = require('../../../components/markdown')
 var Command = require('../../../lib/command')
+var Video = require('../../../components/video')
 var ls = require('local-storage')
 
 var __getUser = function() {
@@ -22,10 +23,13 @@ exports.execute = function(args) {
   cmd.expectOption('--h', 'help')
   cmd.expectOptionWithArgs('-u', 'user')
   cmd.expectOptionWithArgs('--user', 'user')
+  cmd.expectOptionWithArgs('-v', 'video')
+  cmd.expectOptionWithArgs('--video', 'video')
   if (cmd.findOptionByLabel('help')) return this.help()
   if (cmd.findOptionByLabel('user')) {
     __setUser(cmd.findOptionByLabel('user').args[0])
   }
+  if (cmd.findOptionByLabel('video')) return this.video(cmd.findOptionByLabel('video').args[0])
 
   window.io.emit('/client/chat_message', '{{' + __getUser() + '}}: ' + cmd.input.join(' '))
 }
@@ -34,4 +38,7 @@ exports.help = function() {
     <Ascii key={0} value={this.name} font='bell'/>,
     <Markdown file={'/app/commands/bin/' + this.name + '/help.md'}/>
   ]
+}
+exports.video = function(url) {
+  window.io.emit('/client/broadcast_command', {user: __getUser(), command: "video --url " + url})
 }

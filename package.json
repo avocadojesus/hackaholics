@@ -6,7 +6,8 @@
   "scripts": {
     "test": "test",
     "gen-member": "node bin/gen-member.js",
-    "gen-command": "node bin/gen-command.js"
+    "gen-command": "node bin/gen-command.js",
+    "gen-component": "node bin/gen-component.js"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "flux": "^2.1.1",
     "gulp-install": "^0.6.0",
     "jquery": "^2.2.2",
+    "js-video-url-parser": "^0.1.6",
     "local-storage": "^1.4.2",
     "lodash": "^4.6.1",
     "method-override": "^2.3.5",
