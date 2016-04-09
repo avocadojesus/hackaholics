@@ -31,7 +31,7 @@ var HomeView = React.createClass({
           <div className='command-display-container'>
             {this.props.commands.map(function(command, i){
               return (
-                <div key={i}>
+                <div key={i} className='command-prompt-entry-container'>
                   {
                     !command.opts.hide_unparsed &&
                     <CommandPromptEntry>

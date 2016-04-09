@@ -40,6 +40,5 @@ exports.help = function() {
   ]
 }
 exports.video = function(url) {
-  window.io.emit('/client/broadcast_command', {user: __getUser(), command: "video -url " + url})
-  return <Video url={url}/>
+  window.io.emit('/client/broadcast_command', {user: __getUser(), command: "video --url " + url})
 }

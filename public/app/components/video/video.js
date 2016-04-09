@@ -23,12 +23,14 @@ var Video = React.createClass({
   },
   render: function() {
     if (!this.state.valid) return 'invalid video'
-    switch (this.state.video_provider) {
-      case 'youtube':
-        return <YouTube videoId={this.state.video_id} />
-    }
-
-    return 'unrecognized video provider: ' + this.state.video_provider
+    return (
+      <div className='video-component'>
+        {
+          this.state.video_provider === "youtube" &&
+          <YouTube videoId={this.state.video_id} />
+        }
+      </div>
+    )
   }
 })
 
