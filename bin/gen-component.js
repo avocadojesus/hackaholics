@@ -33,7 +33,6 @@ prompt.get(['component-name'], function (err, result) {
     // replace content with relevant vars
     content = content.replace(/{{component_name}}/g, component_name)
     content = content.replace(/{{component_class}}/g, component_class)
-    console.log(content)
 
     // write main file
     fs.writeFile(file, content, function(err) {
