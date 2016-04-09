@@ -102,6 +102,47 @@ exports.help = function() {
 }
 ```
 
+## Generating a new component
+Components are used to render elements on a page. You would use a component if, say, you wanted to render some HTML content on the page.
+
+to create a new command
+```bash
+$ cd /path/to/hackaholics
+$ npm run gen-component
+```
+
+this will launch a prompt, which eventually populates some boiler-plate code into public/app/components/your-component. In here, you will find an index file (for ease of importing), a .less file (used for writing CSS), and a class file, named after your component. In the class file, you can write into react what you are trying to build
+
+generated code:
+```js
+var React = require('react')
+require('./{{component_name}}.less')
+
+var {{component_class}} = React.createClass({
+  displayName: '{{component_class}}',
+  propTypes: {
+
+  },
+  getDefaultProps: function() {
+    return {
+    }
+  },
+  getInitialState: function() {
+    return {
+    }
+  },
+  render: function() {
+    return (
+      <div className='{{component_name}}'>
+        hello {{component_class}}
+      </div>
+    )
+  }
+})
+
+module.exports = {{component_class}}
+```
+
 ## Infrastructure
 The Hackaholics site can be separated into two fundamental sections. One is for the backend service (run by an node/express stack), and the other is for a front-end stack (built in react/react-router/flux design pattern)
 
