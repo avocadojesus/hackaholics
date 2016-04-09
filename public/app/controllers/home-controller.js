@@ -16,6 +16,10 @@ var HomeController = React.createClass({
     window.io.on('/server/chat_message', function(message) {
       CommandActions.create('print ' + message, {hide_unparsed: true})
     })
+    window.io.on('/server/broadcast_command', function(command) {
+      CommandActions.create('print {{' + command.user + '}}:', {hide_unparsed: true})
+      CommandActions.create(command.command, {hide_unparsed: true})
+    })
   },
   render: function() {
     return (
