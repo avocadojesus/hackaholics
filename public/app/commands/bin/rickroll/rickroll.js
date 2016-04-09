@@ -6,18 +6,6 @@ var expectOption = require('../../../lib/command-helper').expectOption
 var expectOptionWithArgument = require('../../../lib/command-helper').expectOptionWithArgument
 var YouTube = require('react-youtube').default
 
-  // // Video from Youtube
-  // React.render(
-  //   <Video from='youtube' videoId={videoId} />,
-  //   $mountNode
-  // );
-  //
-  // // Video from Vimeo
-  // React.render(
-  //   <Video from='vimeo' videoId={videoId} />,
-  //   $mountNode
-  // );
-
 exports.name = "rickroll"
 exports.description = "i think you know what this will do"
 exports.execute = function(args) {

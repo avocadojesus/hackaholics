@@ -22,10 +22,13 @@ exports.execute = function(args) {
   cmd.expectOption('--h', 'help')
   cmd.expectOptionWithArgs('-u', 'user')
   cmd.expectOptionWithArgs('--user', 'user')
+  cmd.expectOptionWithArgs('-v', 'video')
+  cmd.expectOptionWithArgs('--video', 'video')
   if (cmd.findOptionByLabel('help')) return this.help()
   if (cmd.findOptionByLabel('user')) {
     __setUser(cmd.findOptionByLabel('user').args[0])
   }
+  if (cmd.findOptionByLabel('video')) return this.video(cmd.findOptionByLabel('video').args[0])
 
   window.io.emit('/client/chat_message', '{{' + __getUser() + '}}: ' + cmd.input.join(' '))
 }
@@ -34,4 +37,7 @@ exports.help = function() {
     <Ascii key={0} value={this.name} font='bell'/>,
     <Markdown file={'/app/commands/bin/' + this.name + '/help.md'}/>
   ]
+}
+exports.video = function() {
+  return <Ascii key={0} value='hammer balls' font='bell'/>
 }
