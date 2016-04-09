@@ -17,7 +17,7 @@ prompt.get(['component-name'], function (err, result) {
   var dir = __dirname + '/../public/app/components/' + component_name
   var file = __dirname + '/../public/app/components/' + component_name + '/' + component_name + '.js'
   var index_file = __dirname + '/../public/app/components/' + component_name + '/index.js'
-  var less_file = __dirname + '/../public/app/components/' + component_name + '/' + component_name + '.css'
+  var less_file = __dirname + '/../public/app/components/' + component_name + '/' + component_name + '.less'
   var index_contents = 'module.exports = require("./' + component_name + '")'
   var less_contents = '@import "../../config.less";'
 
